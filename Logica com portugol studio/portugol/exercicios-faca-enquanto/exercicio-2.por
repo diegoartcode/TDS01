@@ -2,23 +2,24 @@ programa
 {
 	
 /*
-	4 - Contando números pares em um vetor
-Preencha um vetor com 6 números e exiba quantos são pares.
+	2. Tabuada de um Número
+Crie um programa que solicite ao usuário um número e 
+exiba a sua tabuada de 1 a 10 
+usando um laço faça-enquanto.
 	*/
 	funcao inicio()
 	{
-		inteiro numeros[6], i, pares = 0
+		inteiro numero, i = 0
 
-		para(i=0;i<6;i++){
-			escreva("Digite um número: ")
-			leia(numeros[i])
+		escreva("Digite um número para ver a tabuada: ")
+		leia(numero)
 
-			se(numeros[i] % 2 == 0){
-				pares = pares + 1 //pares++
-			}
-		}
+		faca{
 
-		escreva("Qunatidade de números pares: ", pares)
+			escreva(numero, " x ", i, " = ", numero * i, "\n")
+
+			i++ // i = i + 1
+		}enquanto(i <= 10)
 	}
 }
 
@@ -27,7 +28,7 @@ Preencha um vetor com 6 números e exiba quantos são pares.
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 309; 
+ * @POSICAO-CURSOR = 379; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

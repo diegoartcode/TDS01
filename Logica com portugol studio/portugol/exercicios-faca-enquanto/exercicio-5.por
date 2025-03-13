@@ -2,23 +2,26 @@ programa
 {
 	
 /*
-	4 - Contando números pares em um vetor
-Preencha um vetor com 6 números e exiba quantos são pares.
+	5. Ler números até digitar 0
+Crie um programa que solicite números ao usuário e os some. O programa deve 
+continuar solicitando números até que o usuário digite 0, 
+utilizando um laço faça enquanto
 	*/
 	funcao inicio()
 	{
-		inteiro numeros[6], i, pares = 0
+		inteiro numero, soma = 0 
 
-		para(i=0;i<6;i++){
-			escreva("Digite um número: ")
-			leia(numeros[i])
+		faca{
 
-			se(numeros[i] % 2 == 0){
-				pares = pares + 1 //pares++
-			}
-		}
+			escreva("Digite um número (0 para sair): ")
+			leia(numero)	
+			soma = soma + numero
+			
+		}enquanto(numero != 0)
 
-		escreva("Qunatidade de números pares: ", pares)
+		escreva("Soma = ", soma)
+
+		
 	}
 }
 
@@ -27,7 +30,7 @@ Preencha um vetor com 6 números e exiba quantos são pares.
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 309; 
+ * @POSICAO-CURSOR = 267; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+        .container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+           
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <label for="">Digite sua idade</label>
+        <input type="text" id="idade" value="0">
+        <button id="btn" onclick="btn()">VER</button>
+
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function btn() {
+            var idade = document.getElementById("idade").value;
+            console.log(idade)
+
+            if (idade >= 18) {
+                document.getElementById("resultado").textContent = "Você é maior de idade!"
+            } else {
+                document.getElementById("resultado").textContent = "Você é menor de idade!"
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
