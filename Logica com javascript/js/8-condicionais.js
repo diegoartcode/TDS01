@@ -62,3 +62,53 @@ if (permicao == "SIM") {
     console.log("Resposta inválida!");
 }
 
+
+
+// switch...case
+
+
+var fruta = "uva";
+
+switch(fruta){
+    case "morango":
+        console.log("Temos morango");
+        break
+    case "mamao":
+        console.log("Temos mamão");
+        break
+    case "uva":
+        console.log("Temos uva");
+        break
+    default:
+        console.log("Não temos essa fruta!")
+}
+
+
+
+console.log(new Date().getDay())
+
+numeroDia = new Date().getDay();
+
+switch(numeroDia){
+    case 0:
+        console.log("Domingo!");
+        break;
+    case 1:
+        console.log("Segunda-feira");
+        break;
+    case 2:
+        console.log("Terça-feira");
+        break;
+    case 3:
+        console.log("Quanta-feira");
+        break;
+    case 4:
+        console.log("Quinta-feira");
+        break;
+    case 5:
+        console.log("Sexta-feira");
+        break;
+    case 6:
+        console.log("Sábado");
+        break;
+}
