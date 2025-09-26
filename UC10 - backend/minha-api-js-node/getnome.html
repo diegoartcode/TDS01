@@ -1,0 +1,6 @@
+<script>
+    fetch('http://localhost:3000/alunos/nome/diego')
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+</script>

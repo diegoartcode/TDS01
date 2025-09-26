@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #produtos{
+            display: flex;
+        }
+
+        .produto{
+            background: red;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id="produtos">
+       
+        <!-- <div class="produto">
+            <img src="" alt="">
+            <h3>Titulo</h3>
+            <p>R$10,10</p>
+            <a href=""></a>
+        </div> -->
+    </div>
+
+    <ul id="lista-produtos"></ul>
+
+    <script>
+        // https://fakestoreapi.com/products
+
+        fetch("https://fakestoreapi.com/products")
+            .then(response => response.json())
+            // .then(data => console.log(data))
+            .then(data => {
+                const listaProduto = document.getElementById('lista-produtos');
+                // console.log(listaProduto);
+                // const produtoLi = document.createElement('li');
+                data.forEach(produto => {
+                    const produtoLi = document.createElement('li');
+                    produtoLi.innerHTML = `
+                     <div class="produto">
+            <img src="${produto.image}" alt="">
+            <h3>${produto.title}</h3>
+            <p>R$${produto.price}</p>
+            <a href="produto.html?id=${produto.id}">teste</a>
+        </div>
+                    Produto: ${produto.title}
+                    Preço: ${produto.price}
+                    <img src="${produto.image}">
+                    <a href="produto.html?id=${produto.id}">Ver produto</a>
+                    <hr>
+                    `;
+
+                    listaProduto.appendChild(produtoLi);
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>

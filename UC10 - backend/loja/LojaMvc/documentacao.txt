@@ -1,0 +1,7 @@
+# para iniciar um projeto .net core mvc
+-- dotnet new mvc -n NomeDoProjeto
+
+# entra no projeto 
+-- cd NomeDoProjeto
+
+TIT0577561W11-1\SQLEXPRESS

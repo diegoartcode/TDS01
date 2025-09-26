@@ -1,0 +1,12 @@
+<script>
+    fetch('http://localhost:3000/alunos/4',
+        {
+            method: 'PUT',
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(
+                {name: "João", email:"joao@email.com"}
+            )
+        }
+
+    )
+</script> 

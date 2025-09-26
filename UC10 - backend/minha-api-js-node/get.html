@@ -1,0 +1,14 @@
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost:3000">
+
+</head>
+
+<script>
+    fetch('http://localhost:3000/alunos')
+        .then(res => res.json())
+        // .then(data => console.log(data));
+
+        // imprimir na tela o json
+        .then(data => document.body.innerText = JSON.stringify(data, null, 2));
+
+</script>

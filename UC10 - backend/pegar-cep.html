@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pega cep</title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" id="cep" value="" onblur="acao(this.value)">
+    </form>
+    <hr>
+
+    <div id="main"></div>
+
+    <script>
+
+
+
+        function acao(valor) {
+            cep = document.getElementById('cep').value
+            url = 'https://viacep.com.br/ws/' + valor + '/json/'
+            console.log(url)
+
+            fetch('https://viacep.com.br/ws/' + valor + '/json/')
+                .then(response => response.json())
+                // .then(data => console.log(data))
+                .then(data => {
+                    var principal = document.getElementById('main');
+
+                    const formulario = document.createElement('form');
+                    formulario.innerHTML = `
+                    <form action="">
+                        <label for="">Cep</label>
+                        <input type="text" value="${data.cep}">
+                        <label for="">Logradouro</label>
+                        <input type="text" value="${data.logradouro}"> 
+                    </form>
+
+
+                                
+                `;
+                    principal.appendChild(formulario)
+
+
+                });
+
+        }
+    </script>
+
+</body>
+
+</html>

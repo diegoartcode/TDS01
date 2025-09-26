@@ -1,0 +1,15 @@
+<script>
+    const post = { name: "Romeu", email: "romeu@example.com" };
+
+    const configuracao = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(post)
+    };
+
+    fetch('http://localhost:3000/alunos', configuracao)
+        .then(res => res.json())
+        .then(data => console.log('Aluno criado:', data))
+        .catch(err => console.error(err));
+
+</script>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Alunos - Frontend</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+    button { margin: 2px; }
+    input { padding: 5px; margin-right: 5px; }
+  </style>
+</head>
+<body>
+
+<h1>CRUD de Alunos (API Node.js)</h1>
+
+<div>
+    <input type="number" id="alunoId" placeholder="ID do aluno">
+    <button onclick="buscarAluno()">Buscar Aluno</button>
+    <button onclick="render()">Listar Todos</button>
+    <button onclick="criarAluno()">Adicionar Aluno</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="tabela-corpo"></tbody>
+</table>
+
+<script>
+const API_URL = 'http://localhost:3000/alunos';
+
+// --- Renderiza tabela com todos os alunos ---
+function render() {
+    fetch(API_URL)
+        .then(res => res.json())
+        .then(alunos => atualizarTabela(alunos))
+        .catch(err => console.error('Erro ao carregar alunos:', err));
+}
+
+// --- Atualiza tabela ---
+function atualizarTabela(alunos) {
+    const tbody = document.getElementById('tabela-corpo');
+    tbody.innerHTML = '';
+    alunos.forEach(aluno => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${aluno.id}</td>
+            <td>${aluno.name}</td>
+            <td>${aluno.email}</td>
+            <td>
+                <button onclick="editarAluno(${aluno.id})">Editar (PUT)</button>
+                <button onclick="atualizarParcial(${aluno.id})">Atualizar Parcial (PATCH)</button>
+                <button onclick="deletarAluno(${aluno.id})">Deletar</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// --- Buscar um aluno por ID ---
+function buscarAluno() {
+    const id = document.getElementById('alunoId').value;
+    if (!id) return alert("Informe o ID do aluno");
+
+    fetch(`${API_URL}/${id}`)
+        .then(res => {
+            if (!res.ok) throw new Error('Aluno não encontrado');
+            return res.json();
+        })
+        .then(aluno => atualizarTabela([aluno]))
+        .catch(err => alert(err.message));
+}
+
+// --- POST ---
+function criarAluno() {
+    const name = prompt("Nome do aluno:");
+    if (!name) return;
+    const email = prompt("Email do aluno:");
+    if (!email) return;
+
+    const post = { name, email };
+    const configuracao = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(post)
+    };
+
+    fetch(API_URL, configuracao)
+        .then(res => res.json())
+        .then(data => render())
+        .catch(err => console.error(err));
+}
+
+// --- PUT ---
+function editarAluno(id) {
+    const name = prompt("Novo nome:");
+    if (!name) return;
+    const email = prompt("Novo email:");
+    if (!email) return;
+
+    const put = { name, email };
+    const configuracao = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(put)
+    };
+
+    fetch(`${API_URL}/${id}`, configuracao)
+        .then(res => res.json())
+        .then(data => render())
+        .catch(err => console.error(err));
+}
+
+// --- PATCH ---
+function atualizarParcial(id) {
+    const name = prompt("Atualizar nome (deixe vazio para não alterar):");
+    const email = prompt("Atualizar email (deixe vazio para não alterar):");
+    const patch = {};
+    if (name) patch.name = name;
+    if (email) patch.email = email;
+
+    const configuracao = {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(patch)
+    };
+
+    fetch(`${API_URL}/${id}`, configuracao)
+        .then(res => res.json())
+        .then(data => render())
+        .catch(err => console.error(err));
+}
+
+// --- DELETE ---
+function deletarAluno(id) {
+    if (!confirm("Deseja realmente deletar este aluno?")) return;
+
+    const configuracao = { method: 'DELETE' };
+
+    fetch(`${API_URL}/${id}`, configuracao)
+        .then(res => res.json())
+        .then(data => render())
+        .catch(err => console.error(err));
+}
+
+// --- Inicializa tabela ---
+render();
+</script>
+
+</body>
+</html>

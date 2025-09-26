@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+</head>
+<body>
+    <script>
+        const post = {name: "Maria", email: "maria@email.com"}
+
+        const config = {
+            method: "POST",
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(post)
+        }
+
+        fetch('http://localhost:3000/alunos/',config)
+        .then(response => response.json())
+        .then(data => console.log('Aluno foi criado', data))
+    </script>
+</body>
+</html>
