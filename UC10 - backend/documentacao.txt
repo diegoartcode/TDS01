@@ -1,0 +1,14 @@
+# para iniciar um projeto .net core mvc
+-- dotnet new mvc -n NomeDoProjeto
+
+# entra no projeto 
+-- cd NomeDoProjeto
+
+# executar projeto
+-- dotnet run
+
+# instalar biblioteca do SqlServer
+-- dotnet add package Microsoft.Data.SqlClient
+
+
+TIT0577561W11-1\SQLEXPRESS

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diego.rjoaquim\\Desktop\\UC10 - backend\\loja\\lojamvc\\LojaMvc.csproj": {}
+    "C:\\Users\\diego.rjoaquim\\Desktop\\TDS01\\UC10 - backend\\loja\\LojaMvc\\LojaMvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diego.rjoaquim\\Desktop\\UC10 - backend\\loja\\lojamvc\\LojaMvc.csproj": {
+    "C:\\Users\\diego.rjoaquim\\Desktop\\TDS01\\UC10 - backend\\loja\\LojaMvc\\LojaMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diego.rjoaquim\\Desktop\\UC10 - backend\\loja\\lojamvc\\LojaMvc.csproj",
+        "projectUniqueName": "C:\\Users\\diego.rjoaquim\\Desktop\\TDS01\\UC10 - backend\\loja\\LojaMvc\\LojaMvc.csproj",
         "projectName": "LojaMvc",
-        "projectPath": "C:\\Users\\diego.rjoaquim\\Desktop\\UC10 - backend\\loja\\lojamvc\\LojaMvc.csproj",
+        "projectPath": "C:\\Users\\diego.rjoaquim\\Desktop\\TDS01\\UC10 - backend\\loja\\LojaMvc\\LojaMvc.csproj",
         "packagesPath": "C:\\Users\\diego.rjoaquim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diego.rjoaquim\\Desktop\\UC10 - backend\\loja\\lojamvc\\obj\\",
+        "outputPath": "C:\\Users\\diego.rjoaquim\\Desktop\\TDS01\\UC10 - backend\\loja\\LojaMvc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

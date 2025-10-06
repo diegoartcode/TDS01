@@ -1,0 +1,23 @@
+@model LojaMvc.Models.ProdutoModel
+
+
+<div class="row">
+    <h2>Id</h2>
+    <p>      
+         @Model.Id
+    </p>
+
+    <h2>Nome</h2>
+    <p>@Model.Nome</p>
+
+    <h2>Descrição</h2>
+    <p>@Model.Descricao</p>
+
+    <h2>Preço</h2>
+    <p>R$ @Model.Preco</p>
+
+    <div>
+        <a asp-action="Index">Voltar</a>
+    </div>
+
+</div>

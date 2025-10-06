@@ -1,0 +1,24 @@
+@using System.Collections.Generic
+@model List<LojaMvc.Models.ProdutoModel>
+<h2>Lista de produtos - teste</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Preco</th>
+    </tr>
+    @foreach (var produto in Model)
+    {
+        <tr>
+            <td>@produto.Id</td>
+            <td>@produto.Nome</td>
+            <td>@produto.Preco</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@produto.Id">Ver</a>
+            </td>
+        </tr>
+
+        
+    }
+
+</table>
