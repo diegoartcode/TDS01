@@ -97,6 +97,7 @@ namespace lojabanco.Data
                     command.Parameters.AddWithValue("@Nome", produto.Nome);
                     command.Parameters.AddWithValue("@Descricao", produto.Descricao);
                     command.Parameters.AddWithValue("@Preco", produto.Preco);
+                    command.Parameters.AddWithValue("@Id", produto.Id);
 
                     // ExecuteNonQuery() é usado para comandos que não retorna dados (update,delete,insert)
                     // Ele retorna o numero de linha afetadas

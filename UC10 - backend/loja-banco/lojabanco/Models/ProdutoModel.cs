@@ -9,9 +9,19 @@ namespace lojabanco.Models
     public class ProdutoModel
     {
         public int Id { get; set; }
+
+        [Display(Name = "Nome")]
+        [Required(ErrorMessage = "O campo Nome é obrigatório.")]
         public string Nome { get; set; } = null!;
-        public string Descricao { get; set; } = null!;       
-        public decimal Preco { get; set;}
-     
+
+        [Display(Name = "Descrição")]
+        [Required(ErrorMessage = "O campo Descrição é obrigatório.")]
+        public string Descricao { get; set; } = null!;
+
+        [Display(Name = "Preço")]
+        [Required(ErrorMessage = "O campo Preço é obrigatório.")]
+        [Range(0.01, (double)decimal.MaxValue, ErrorMessage = "O preço deve ser maior que zero.")]
+        public decimal Preco { get; set; }
+
     }
 }
